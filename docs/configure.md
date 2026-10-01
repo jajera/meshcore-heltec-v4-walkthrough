@@ -2,8 +2,9 @@
 
 Set identity and the **local radio preset** before you transmit.
 
-MeshCore companion apps expose radio presets from the MeshCore App API. Suggested community
-presets are documented under [Radio Presets](https://docs.meshcore.io/radio_presets/).
+Suggested community presets come from the MeshCore App API
+([Radio Presets](https://docs.meshcore.io/radio_presets/), live:
+`https://api.meshcore.nz/api/v1/config`).
 
 ## NZ desk default
 
@@ -14,23 +15,23 @@ presets are documented under [Radio Presets](https://docs.meshcore.io/radio_pres
 | Spreading factor | **7** |
 | Bandwidth | **62.5** kHz |
 | Coding rate | **5** |
+| Path hash size | **2** (API `network_settings.path_hash_size`) |
 
-Source: MeshCore radio presets documentation / API example (`New Zealand (Narrow)`).
+API description string: `917.375MHz / SF7 / BW62.5 / CR5 / 2B`. Verified against the live
+config API this pass.
+
+Do not pick **New Zealand (Gisborne)** unless that is your local mesh — same centre
+frequency, different SF / BW / path hash.
 
 Outside NZ, pick the preset that matches your region and local rules (for example
-**Australia (Narrow)** on 916.575 MHz). Do not invent frequencies.
+**Australia (Narrow)** on 916.575 MHz / SF7 / BW62.5 / CR7). Do not invent frequencies.
 
 ## Steps
 
-!!! warning "Handset UI unverified"
-
-    Exact app menu labels may differ by MeshCore app version. Confirm on your phone.
-
-1. Power the board; antenna on.
-2. Open the MeshCore app (or [app.meshcore.nz](https://app.meshcore.nz)) — see [Phone app](phone.md).
-3. Connect to the Companion over Bluetooth.
-4. Set a **node name** you recognise.
-5. Apply **New Zealand (Narrow)** (or your local preset).
-6. Save / apply so the radio uses the new settings.
+1. Antenna on; board powered (Companion advertising — see [First boot](first-boot.md)).
+2. Pair in the MeshCore app — [Phone app](phone.md).
+3. In device setup / Settings, set a **node name** you recognise (mesh display name).
+4. Apply **New Zealand (Narrow)** (or your local preset) and save (checkmark).
+5. Confirm frequency shows **917.375** MHz before relying on TX.
 
 Next: [Phone app](phone.md).

@@ -48,6 +48,34 @@ Complete!
 
 </div>
 
+Confirm serial group membership:
+
+<div class="run" markdown>
+
+```bash
+groups
+```
+
+```text {.no-copy}
+you wheel dialout
+```
+
+</div>
+
+`dialout` must appear. If it does not, add your user and re-login:
+
+<div class="run" markdown>
+
+```bash
+sudo usermod -aG dialout "$USER"
+```
+
+```text {.no-copy}
+# no output on success — log out and back in, then re-check groups
+```
+
+</div>
+
 USB identity after you plug the board in:
 
 <div class="run" markdown>
@@ -57,12 +85,12 @@ lsusb | grep -i espressif
 ```
 
 ```text {.no-copy}
-Bus 003 Device 007: ID 303a:1001 Espressif USB JTAG/serial debug unit
+Bus 003 Device 076: ID 303a:1001 Espressif USB JTAG/serial debug unit
 ```
 
 </div>
 
-Serial node (path can differ):
+Serial node (path and bus/device numbers can differ):
 
 <div class="run" markdown>
 
@@ -71,11 +99,11 @@ ls -l /dev/ttyACM* /dev/serial/by-id/ 2>/dev/null
 ```
 
 ```text {.no-copy}
-crw-rw---- 1 root dialout 166, 0 Sep 29 08:30 /dev/ttyACM0
+crw-rw---- 1 root dialout 166, 0 Oct  1 20:37 /dev/ttyACM0
 
 /dev/serial/by-id/:
 total 0
-lrwxrwxrwx 1 root root 13 Sep 29 08:30 usb-Espressif_USB_JTAG_serial_debug_unit_10:BD:A3:5B:13:E0-if00 -> ../../ttyACM0
+lrwxrwxrwx 1 root root 13 Oct  1 19:53 usb-Espressif_USB_JTAG_serial_debug_unit_10:BD:A3:5B:13:E0-if00 -> ../../ttyACM0
 ```
 
 </div>
@@ -84,7 +112,7 @@ That proves USB — next, [identify](identify.md) and select **Heltec v4**.
 
 ## Tools
 
-- [MeshCore Web Flasher](https://meshcore.io/flasher)
+- [MeshCore Web Flasher](https://meshcore.io/flasher) — open in Chrome / Chromium / Edge
 - **MeshCore** mobile app (Android / iOS) — BLE pair and day-to-day use ([Phone app](phone.md))
 - [MeshCore web app](https://app.meshcore.nz) after flash
 

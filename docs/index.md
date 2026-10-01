@@ -11,7 +11,8 @@ radio preset, and prove the node is alive with the MeshCore app.
 ## Host note
 
 Host-side checks and serial examples were done on **Fedora**. Flash and MeshCore config are
-the same elsewhere; package names, serial groups, and device paths may differ.
+the same elsewhere; package names, serial groups, and device paths may differ. Desk evidence
+for this guide used Companion BLE **v1.17.1** on plain Heltec v4.
 
 ## Path
 

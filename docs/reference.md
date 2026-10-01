@@ -20,7 +20,9 @@
 | Board | Heltec WiFi LoRa 32 V4 |
 | Flasher target | **Heltec v4** |
 | Role | **Companion · Bluetooth** (`companionBle`) |
-| NZ preset | **New Zealand (Narrow)** — 917.375 MHz / SF7 / BW62.5 / CR5 |
+| NZ preset | **New Zealand (Narrow)** — 917.375 MHz / SF7 / BW62.5 / CR5 / path hash 2 |
+| Desk firmware | Companion BLE **v1.17.1** |
+| Desk BLE advert (pre-rename) | `MeshCore-6137C0F2` |
 | USB ID (desk) | `303a:1001` Espressif USB JTAG/serial |
 
 ## Related roles (out of path)
