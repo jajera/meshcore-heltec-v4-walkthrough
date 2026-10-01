@@ -9,5 +9,5 @@
 - [x] Evidence pass: Companion BLE flash on desk Heltec V4 (v1.17.1)
 - [x] Capture flasher screenshots (device + Companion role)
 - [ ] Phone BLE pair + verify (handset)
-- [ ] Pages domain + johna-kiwi-infra CNAME entry
-- [ ] Optional: guides hub catalogue entry
+- [x] Pages domain + johna-kiwi-infra CNAME entry
+- [x] Guides hub catalogue entry
