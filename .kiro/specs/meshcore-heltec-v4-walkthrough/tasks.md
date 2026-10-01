@@ -8,6 +8,6 @@
 - [x] Fill procedural pages (Companion-first, V4-only)
 - [x] Evidence pass: Companion BLE flash on desk Heltec V4 (v1.17.1)
 - [x] Capture flasher screenshots (device + Companion role)
-- [ ] Phone BLE pair + verify (handset)
+- [x] Phone BLE pair + verify (handset)
 - [x] Pages domain + johna-kiwi-infra CNAME entry
 - [x] Guides hub catalogue entry
