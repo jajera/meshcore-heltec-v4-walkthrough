@@ -1,0 +1,67 @@
+---
+description: Pattern and conventions for Zensical walkthrough pages in this repo.
+globs:
+  - "docs/**/*.md"
+alwaysApply: false
+---
+
+# Docs pattern
+
+**Voice:** Follow **[.cursor/rules/voice-tone.mdc](voice-tone.mdc)**.
+
+## Stack
+
+- Markdown under `docs/` built with **Zensical + Patina**.
+- Nav order lives only in `zensical.toml` — never number filenames.
+- Read `.kiro/steering/docs-pattern.md` and `source-lock.md` before inventing procedure detail.
+
+## Page shape
+
+1. One H1.
+2. Short lede.
+3. Numbered steps or symptom table.
+4. Screenshot placeholders → fill during live setup (`docs/assets/images/`).
+5. Link to the next nav page.
+
+## Command + result cards
+
+Match the [route53 profiles](https://aws-route53-central-outbound.johna.kiwi/demo/profiles/) pattern — one `.run` card per command, result in a separate `text {.no-copy}` fence:
+
+````markdown
+<div class="run" markdown>
+
+```bash
+lsusb | grep -i espressif
+```
+
+```text {.no-copy}
+Bus 003 Device 006: ID 303a:1001 Espressif USB JTAG/serial debug unit
+```
+
+</div>
+````
+
+Do not put the command and its stdout in one fence. Do not stack unrelated commands in one card.
+
+## Tables
+
+Use spaced GFM separators:
+
+```markdown
+| Column A | Column B |
+| --- | --- |
+| one | two |
+```
+
+## Critical hardware rules
+
+- Target **Heltec v4** only in this walkthrough.
+- Role: **Companion · Bluetooth** (`companionBle`) for the phone path.
+- Bootloader before web flash: hold USER (PRG), tap RST, release USER.
+- Web Serial: Chrome / Chromium / Edge only.
+- Set radio preset before TX (**New Zealand (Narrow)** for NZ).
+- MeshCore ≠ Meshtastic — they do not interoperate on air.
+
+## Accuracy
+
+Prefer facts in `.kiro/steering/source-lock.md`. Tag anything not yet observed as **unverified**.
